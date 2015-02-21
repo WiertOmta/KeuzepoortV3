@@ -30,9 +30,6 @@ public class QuestionHandler {
       	catch(IOException e) {
           	System.out.println("IOException");
       	}
-        catch(FileNotFoundException e) {
-            System.out.println("File not found!");
-        }
 	}
 
 	public String getNextQuestion() {
