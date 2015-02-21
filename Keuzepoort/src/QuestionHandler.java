@@ -3,7 +3,7 @@ import java.util.*;
 public class QuestionHandler {
 
 	private ArrayList<String> questionList;
-	private currentQuestion;
+	private  int currentQuestion;
 
 	public QuestionHandler() {
 		questionList = new ArrayList<String>();
