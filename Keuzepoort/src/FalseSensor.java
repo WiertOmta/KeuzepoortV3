@@ -1,4 +1,4 @@
-public class FalseSensor extends Sensor {
+public class FalseSensor extends Sensor implements Runnable {
 
 	public FalseSensor() {
 

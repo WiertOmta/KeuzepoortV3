@@ -1,4 +1,4 @@
-public class TrueSensor extends Sensor {
+public class TrueSensor extends Sensor implements Runnable {
 
 	public TrueSensor() {
 
