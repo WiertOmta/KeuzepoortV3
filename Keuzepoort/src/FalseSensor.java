@@ -1,4 +1,4 @@
-public class FalseSensor extends Sensor implements Runnable {
+public class FalseSensor extends Sensor {
 
 	public FalseSensor() {
 
@@ -10,6 +10,8 @@ public class FalseSensor extends Sensor implements Runnable {
 
 	public void run() {
 		/*Check the IR sensor. If the IR sensor sensed something, tell the listener.*/
-		System.out.println("FalseSensor!");
+		while(true) {
+			System.out.println("FalseSensor!");
+		}
 	}
 }
