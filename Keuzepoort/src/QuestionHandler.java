@@ -1,4 +1,10 @@
 import java.util.*;
+import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class QuestionHandler {
 
@@ -30,7 +36,7 @@ public class QuestionHandler {
 	}
 
 	public String getNextQuestion() {
-		String s = questionList[currentQuestion];
+		String s = questionList.get(currentQuestion);
 		currentQuestion++;
 		return s;
 	}
