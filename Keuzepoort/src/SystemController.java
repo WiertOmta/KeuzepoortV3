@@ -24,8 +24,8 @@ public class SystemController extends TimerTask implements SensorListener {
 		falseSensor = new FalseSensor();
 		falseSensor.setListener(this);
 
-		trueSensor.run();
-		falseSensor.run();
+		trueSensor.start();
+		falseSensor.start();
 
 		Timer timer = new Timer(true);
 		timer.scheduleAtFixedRate(this, 0, 30 * 60 * 60 * 1000);
