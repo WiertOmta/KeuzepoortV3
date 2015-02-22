@@ -4,6 +4,7 @@ import java.util.TimerTask;
 import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
+import com.pi4j.io.gpio.PinState;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
@@ -43,10 +44,10 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
   		//System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin().getPin().getAddress() + " = " + event.getState());
-  		if((event.getPin().getPin().getAddress() == 0) && (event.getState == PinState.HIGH)) {
+  		if((event.getPin().getPin().getAddress() == 0) && (event.getState() == PinState.HIGH)) {
   			trueCount++;
   			System.out.println(trueCount);
-  		} else if((event.getPin().getPin().getAddress == 2) && (event.getState == PinState.HIGH)) {
+  		} else if((event.getPin().getPin().getAddress == 2) && (event.getState() == PinState.HIGH)) {
   			falseCount++;
   			System.out.println(falseCount);
   		}
