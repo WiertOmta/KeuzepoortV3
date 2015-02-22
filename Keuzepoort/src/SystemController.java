@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.pi4j.io.gpio.PinState;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
