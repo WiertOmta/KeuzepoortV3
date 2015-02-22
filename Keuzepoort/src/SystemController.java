@@ -6,6 +6,7 @@ import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.pi4j.io.gpio.PinState;
 import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
@@ -34,7 +35,11 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 
 	public SystemController() {
-		printWriter = new PrintWriter("answers.csv","UTF-8");
+		try {
+			printWriter = new PrintWriter("answers.csv","UTF-8");
+		} catch(FileNotFoundException e) {
+
+		}
 		trueCount = 0;
 		falseCount = 0;
 		questionHandler = new QuestionHandler();
