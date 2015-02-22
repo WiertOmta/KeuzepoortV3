@@ -1,4 +1,8 @@
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalInput;
+
 public abstract class Sensor extends Thread {
-	protected SensorListener theListener = null;
-	abstract void setListener(SensorListener sensorListener);
+	protected final GpioController gpioController;
+	protected final GpioPinDigitalInput pin;
 }

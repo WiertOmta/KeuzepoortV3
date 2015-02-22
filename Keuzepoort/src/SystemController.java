@@ -35,15 +35,6 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-   		// display pin state on console
   		System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
    	}
-
-	/*public void SensorTriggered(Sensor s) {
-		if(s == trueSensor) {
-			System.out.println("TrueSensor triggered!");
-		} else if(s == falseSensor) {
-			System.out.println("FalseSenor triggered!");
-		}
-	}*/
 }
