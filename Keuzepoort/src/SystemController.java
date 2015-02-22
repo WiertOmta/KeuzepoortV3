@@ -40,6 +40,8 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 			printWriter = new PrintWriter("answers.csv","UTF-8");
 		} catch(FileNotFoundException e) {
 
+		} catch(UnsupportedEncodingException e) {
+			
 		}
 		trueCount = 0;
 		falseCount = 0;
