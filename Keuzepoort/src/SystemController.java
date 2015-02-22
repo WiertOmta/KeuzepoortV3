@@ -5,6 +5,7 @@ import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.pi4j.io.gpio.PinState;
+import java.io.PrintWriter;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
@@ -14,19 +15,26 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	private int trueCount;
 	private int falseCount;
 	private String currentQuestion;
+	private PrintWriter printWriter;
 
 	public static void main(String[] args) {
 		SystemController systemController = new SystemController();
 	}
 
 	public void run() {
-		trueCount = 0;
-		falseCount = 0;
-		currentQuestion = questionHandler.getNextQuestion();
-		System.out.println(currentQuestion);
+		if(currentQuestion.equals("")) {
+			currentQuestion = questionHandler.getNextQuestion();;
+		} else {
+			printWriter.println(currentQuestion + ", " + trueCount + ", " + falseCount);
+			trueCount = 0;
+			falseCount = 0;
+			currentQuestion = questionHandler.getNextQuestion();
+			System.out.println(currentQuestion);
+		}
 	}
 
 	public SystemController() {
+		printWriter = new PrintWriter("answers.csv","UTF-8");
 		trueCount = 0;
 		falseCount = 0;
 		questionHandler = new QuestionHandler();
@@ -43,7 +51,6 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-  		//System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin().getPin().getAddress() + " = " + event.getState());
   		if((event.getPin().getPin().getAddress() == 0) && (event.getState() == PinState.HIGH)) {
   			trueCount++;
   			System.out.println(trueCount);
