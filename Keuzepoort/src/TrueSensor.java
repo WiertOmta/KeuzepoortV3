@@ -27,7 +27,7 @@ public class TrueSensor extends Sensor {
 	public void run() {
 		/*Check the IR sensor. If the IR sensor sensed something, tell the listener.*/
 		while(true) {
-			//System.out.println("TrueSensor!");
+			System.out.println("TrueSensor!");
 		}		
 	}
 }
