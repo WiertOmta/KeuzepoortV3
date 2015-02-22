@@ -28,7 +28,11 @@ public class FalseSensor extends Sensor {
 		/*Check the IR sensor. If the IR sensor sensed something, tell the listener.*/
 		while(true) {
 			//System.out.println("FalseSensor!");
-			Thread.sleep(500);
+			try {
+				Thread.sleep(500);
+			} catch(InterruptedException e) {
+				
+			}
 		}
 	}
 }
