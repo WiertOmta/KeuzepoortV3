@@ -16,9 +16,9 @@ public class TrueSensor extends Sensor {
 		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_11, "TrueSensorPin", PinPullResistance.PULL_DOWN);
 	}
 
-	/*public void setListener(SensorListener sensorListener) {
-		theListener = sensorListener;
-	}*/
+	public void setListener(SensorListener sensorListener) {
+		//theListener = sensorListener;
+	}
 
 	public void setListener(GpioPinListenerDigital listener) {
 		pin.addListener(listener);
