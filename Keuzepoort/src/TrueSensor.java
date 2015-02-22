@@ -9,7 +9,7 @@ import com.pi4j.io.gpio.PinPullResistance;
 public class TrueSensor extends Sensor {
 
 	public TrueSensor() {
-		gpioController = GpioFactory.getInstance();
+		//gpioController = GpioFactory.getInstance();
 		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_02, "TrueSensorPin", PinPullResistance.PULL_DOWN);
 	}
 

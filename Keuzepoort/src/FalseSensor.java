@@ -9,7 +9,7 @@ import com.pi4j.io.gpio.PinPullResistance;
 public class FalseSensor extends Sensor {
 
 	public FalseSensor() {
-		gpioController = GpioFactory.getInstance();
+		//gpioController = GpioFactory.getInstance();
 		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_00, "FalseSensorPin", PinPullResistance.PULL_DOWN);
 	}
 
