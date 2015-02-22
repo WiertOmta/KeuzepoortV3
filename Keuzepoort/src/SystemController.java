@@ -10,17 +10,24 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	private TrueSensor trueSensor;
 	private FalseSensor falseSensor;
 	private QuestionHandler questionHandler;
+	private int trueCount;
+	private int falseCount;
+	private String currentQuestion;
 
 	public static void main(String[] args) {
 		SystemController systemController = new SystemController();
 	}
 
 	public void run() {
-		System.out.println(questionHandler.getNextQuestion());
-		//System.out.println("TimerTask ticked!");
+		trueCount = 0;
+		falseCount = 0;
+		currentQuestion = questionHandler.getNextQuestion();
+		System.out.println(currentQuestion);
 	}
 
 	public SystemController() {
+		trueCount = 0;
+		falseCount = 0;
 		questionHandler = new QuestionHandler();
 		trueSensor = new TrueSensor();
 		trueSensor.setListener(this);
@@ -35,6 +42,6 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-  		System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = " + event.getState());
+  		System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin().getAddress() + " = " + event.getState());
    	}
 }

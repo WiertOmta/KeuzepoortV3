@@ -9,7 +9,6 @@ import com.pi4j.io.gpio.PinPullResistance;
 public class FalseSensor extends Sensor {
 
 	public FalseSensor() {
-		//gpioController = GpioFactory.getInstance();
 		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_00, "FalseSensorPin", PinPullResistance.PULL_DOWN);
 	}
 
@@ -18,9 +17,7 @@ public class FalseSensor extends Sensor {
 	}
 
 	public void run() {
-		/*Check the IR sensor. If the IR sensor sensed something, tell the listener.*/
 		while(true) {
-			//System.out.println("FalseSensor!");
 			try {
 				Thread.sleep(500);
 			} catch(InterruptedException e) {
