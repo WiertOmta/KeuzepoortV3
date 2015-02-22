@@ -47,7 +47,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
   		if((event.getPin().getPin().getAddress() == 0) && (event.getState() == PinState.HIGH)) {
   			trueCount++;
   			System.out.println(trueCount);
-  		} else if((event.getPin().getPin().getAddress == 2) && (event.getState() == PinState.HIGH)) {
+  		} else if((event.getPin().getPin().getAddress() == 2) && (event.getState() == PinState.HIGH)) {
   			falseCount++;
   			System.out.println(falseCount);
   		}
