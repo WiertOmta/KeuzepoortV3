@@ -16,12 +16,12 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 
 	public void run() {
-		//System.out.println(questionHandler.getNextQuestion());
-		System.out.println("TimerTask ticked!");
+		System.out.println(questionHandler.getNextQuestion());
+		//System.out.println("TimerTask ticked!");
 	}
 
 	public SystemController() {
-		//questionHandler = new QuestionHandler();
+		questionHandler = new QuestionHandler();
 		trueSensor = new TrueSensor();
 		trueSensor.setListener(this);
 		falseSensor = new FalseSensor();
