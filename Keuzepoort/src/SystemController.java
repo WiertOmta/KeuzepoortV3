@@ -41,10 +41,11 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		} catch(FileNotFoundException e) {
 
 		} catch(UnsupportedEncodingException e) {
-			
+
 		}
 		trueCount = 0;
 		falseCount = 0;
+		currentQuestion = "";
 		questionHandler = new QuestionHandler();
 		trueSensor = new TrueSensor();
 		trueSensor.setListener(this);
