@@ -35,6 +35,9 @@ public class QuestionHandler {
 	public String getNextQuestion() {
 		String s = questionList.get(currentQuestion);
 		currentQuestion++;
+		if(currentQuestion >= questionList.size()) {
+			currentQuestion = 0;
+		}
 		return s;
 	}
 }
