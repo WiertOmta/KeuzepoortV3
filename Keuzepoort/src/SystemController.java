@@ -38,10 +38,17 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		falseSensor.start();
 
 		Timer timer = new Timer(true);
-		timer.scheduleAtFixedRate(this, 0, 5000);
+		timer.scheduleAtFixedRate(this, 0, 10000);
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
-  		System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin().getPin().getAddress() + " = " + event.getState());
+  		//System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin().getPin().getAddress() + " = " + event.getState());
+  		if((event.getPin().getPin().getAddress() == 0) && (event.getState == PinState.HIGH)) {
+  			trueCount++;
+  			System.out.println(trueCount);
+  		} else if((event.getPin().getPin().getAddress == 2) && (event.getState == PinState.HIGH)) {
+  			falseCount++;
+  			System.out.println(falseCount);
+  		}
    	}
 }
