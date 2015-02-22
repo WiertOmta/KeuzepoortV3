@@ -13,7 +13,7 @@ public class FalseSensor extends Sensor {
 
 	public FalseSensor() {
 		gpioController = GpioFactory.getInstance();
-		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_13, "FalseSensorPin", PinPullResistance.PULL_DOWN);
+		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_00, "FalseSensorPin", PinPullResistance.PULL_DOWN);
 	}
 
 	public void setListener(SensorListener sensorListener) {

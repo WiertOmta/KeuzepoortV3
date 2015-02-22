@@ -13,7 +13,7 @@ public class TrueSensor extends Sensor {
 
 	public TrueSensor() {
 		gpioController = GpioFactory.getInstance();
-		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_11, "TrueSensorPin", PinPullResistance.PULL_DOWN);
+		pin = gpioController.provisionDigitalInputPin(RaspiPin.GPIO_02, "TrueSensorPin", PinPullResistance.PULL_DOWN);
 	}
 
 	public void setListener(SensorListener sensorListener) {
@@ -31,7 +31,7 @@ public class TrueSensor extends Sensor {
 			try {
 				Thread.sleep(500);
 			} catch(InterruptedException e) {
-				
+
 			}
 		}	
 	}
