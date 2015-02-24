@@ -10,16 +10,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
-String content = "This is the content to write into file";
- 
-			
-			bw.write(content);
-			bw.close();
- 
-			System.out.println("Done");
-
-
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
 	private TrueSensor trueSensor;
@@ -62,7 +52,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 
 	public SystemController() {
 		try {
-			File file = new File("/users/mkyong/filename.txt");
+			File file = new File("answers.csv");
 
 			if (!file.exists()) {
 				file.createNewFile();
