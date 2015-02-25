@@ -6,6 +6,7 @@ public class Window extends JFrame {
     private JLabel questionLabel, trueLabel, falseLabel;
  
     public Window() {
+        setTitle("Keuzepoort software - by IGNE 2015");
         setLayout(new FlowLayout());
  
         questionLabel = new JLabel("");
@@ -17,6 +18,7 @@ public class Window extends JFrame {
  		falseLabel = new JLabel("");
  		add(falseLabel);
 
+        getContentPane().setBackground(Color.GRAY); 
         setSize(800,600);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
