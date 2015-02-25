@@ -4,21 +4,27 @@ import javax.swing.*;
 
 public class Window extends JFrame {
     private JLabel questionLabel, trueLabel, falseLabel;
- 
+    private Color color;
+
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
         setLayout(new FlowLayout());
- 
+        /* color: 0x3498db */
+
         questionLabel = new JLabel("");
+        questionLabel.setHorizontalAlignment(JLabel.CENTER);
+        questionLabel.setVerticalAlignment(JLabel.CENTER);
+        questionLabel.setForeground(Color.WHITE);
+        questionLabel.setFont(new Font("Roboto", Font.BOLD, 20)); 
         add(questionLabel);
  		
  		trueLabel = new JLabel("");
- 		add(trueLabel);
+ 		//add(trueLabel);
 
  		falseLabel = new JLabel("");
- 		add(falseLabel);
-
-        getContentPane().setBackground(Color.GRAY); 
+ 		//add(falseLabel);
+        color = new Color(52,152,219);
+        getContentPane().setBackground(color); 
         setExtendedState(Frame.MAXIMIZED_BOTH);
         setUndecorated(true);
         setVisible(true);
