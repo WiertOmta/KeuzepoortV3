@@ -34,7 +34,14 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		} else {
 			//write currentquestion, trueCount, falseCount to answers.csv;
 			try {
+				File file = new File("answers.csv");
+				if (!file.exists()) {
+					file.createNewFile();
+				}
+				FileWriter fw = new FileWriter(file.getAbsoluteFile());
+				BufferedWriter bw = new BufferedWriter(fw);
 				bw.write(currentquestion + ",ja: " + trueCount + ",nee: " + falseCount + "\n");
+				bw.close();
 			} catch(IOException e) {
 				
 			}
@@ -51,19 +58,6 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	}
 
 	public SystemController() {
-		try {
-			File file = new File("answers.csv");
-
-			if (!file.exists()) {
-				file.createNewFile();
-			}
-	 
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
-		} catch(IOException e) {
-
-		}
-
 		window = new Window();
 		trueCount = 0;
 		falseCount = 0;
