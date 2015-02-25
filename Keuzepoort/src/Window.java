@@ -8,7 +8,7 @@ public class Window extends JFrame {
 
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
-        setLayout(new FlowLayout());
+        setLayout(new BorderLayout());
         /* color: 0x3498db */
 
         questionLabel = new JLabel("");
@@ -16,7 +16,7 @@ public class Window extends JFrame {
         questionLabel.setVerticalAlignment(JLabel.CENTER);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto", Font.BOLD, 50)); 
-        add(questionLabel);
+        add(questionLabel, BorderLayout.CENTER);
  		
  		trueLabel = new JLabel("");
  		//add(trueLabel);
