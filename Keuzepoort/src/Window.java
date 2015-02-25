@@ -15,7 +15,7 @@ public class Window extends JFrame {
         questionLabel.setHorizontalAlignment(JLabel.CENTER);
         questionLabel.setVerticalAlignment(JLabel.CENTER);
         questionLabel.setForeground(Color.WHITE);
-        questionLabel.setFont(new Font("Roboto", Font.BOLD, 20)); 
+        questionLabel.setFont(new Font("Roboto", Font.BOLD, 50)); 
         add(questionLabel);
  		
  		trueLabel = new JLabel("");
