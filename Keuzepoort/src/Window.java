@@ -19,7 +19,8 @@ public class Window extends JFrame {
  		add(falseLabel);
 
         getContentPane().setBackground(Color.GRAY); 
-        setSize(800,600);
+        setExtendedState(Frame.MAXIMIZED_BOTH);
+        setUndecorated(true);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
