@@ -30,7 +30,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	public void run() {
 		if(currentQuestion.equals("")) {
 			currentQuestion = questionHandler.getNextQuestion();
-			window.setQuestionLabel(currentQuestion);
+			window.setQuestionLabel("<html><span style='text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);'>" + currentQuestion + "</span></html>");
 		} else 
 			//write currentquestion, trueCount, falseCount to answers.csv;
 			try {
@@ -45,10 +45,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 			trueCount = 0;
 			falseCount = 0;
 			currentQuestion = questionHandler.getNextQuestion();
-			window.setQuestionLabel(currentQuestion);
-			window.setTrueLabel("Ja gestemd: " + trueCount);
-			window.setFalseLabel("Nee gestemd: " + falseCount);
-			System.out.println(currentQuestion);
+			window.setQuestionLabel("<html><span style='text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);'>" + currentQuestion + "</span></html>");
 		}
 
 	public SystemController() {
@@ -82,12 +79,8 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
   		if((event.getPin().getPin().getAddress() == 0) && (event.getState() == PinState.HIGH)) {
   			trueCount++;
-  			window.setTrueLabel("Ja gestemd: " + trueCount);
-  			System.out.println(trueCount);
   		} else if((event.getPin().getPin().getAddress() == 2) && (event.getState() == PinState.HIGH)) {
   			falseCount++;
-  			window.setFalseLabel("Nee gestemd: " + falseCount);
-  			System.out.println(falseCount);
   		}
    	}
 }
