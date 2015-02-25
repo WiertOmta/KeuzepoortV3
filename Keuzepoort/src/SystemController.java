@@ -55,7 +55,6 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 			window.setFalseLabel("Nee gestemd: " + falseCount);
 			System.out.println(currentQuestion);
 		}
-	}
 
 	public SystemController() {
 		window = new Window();
