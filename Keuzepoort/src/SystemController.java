@@ -59,7 +59,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		} catch(IOException e) {
 			
 		}
-		window = new Window();
+		
 		trueCount = 0;
 		falseCount = 0;
 		currentQuestion = "";
@@ -74,6 +74,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 
 		Timer timer = new Timer(true);
 		timer.scheduleAtFixedRate(this, 0, 10000);
+		window = new Window();
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
