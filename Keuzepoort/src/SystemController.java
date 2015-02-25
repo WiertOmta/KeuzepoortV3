@@ -30,7 +30,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	public void run() {
 		if(currentQuestion.equals("")) {
 			currentQuestion = questionHandler.getNextQuestion();
-			if(!(currentquestion.equals(""))) {
+			if(!(currentQuestion.equals(""))) {
 				window.setQuestionLabel("<html><body style='width: 1200px'>" + currentQuestion + "</body></html>");
 			}
 		} else 
