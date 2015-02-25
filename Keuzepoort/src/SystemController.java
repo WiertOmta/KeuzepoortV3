@@ -58,8 +58,8 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 				file.createNewFile();
 				System.out.println("Dit is niet OK!");
 			}
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
+			fw = new FileWriter(file.getAbsoluteFile());
+			bw = new BufferedWriter(fw);
 		} catch(IOException e) {
 			
 		}
