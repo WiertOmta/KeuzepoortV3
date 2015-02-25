@@ -53,10 +53,9 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 
 	public SystemController() {
 		try {
-			File file = new File("answers.csv");
+			File file = new File("answers.csv",true);
 			if (!file.exists()) {
 				file.createNewFile();
-				System.out.println("Dit is niet OK!");
 			}
 			fw = new FileWriter(file.getAbsoluteFile());
 			bw = new BufferedWriter(fw);
