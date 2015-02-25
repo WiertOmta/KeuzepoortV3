@@ -30,8 +30,8 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	public void run() {
 		if(currentQuestion.equals("")) {
 			currentQuestion = questionHandler.getNextQuestion();
-			window.setQuestionLabel(currentquestion);
-		} else {
+			window.setQuestionLabel(currentQuestion);
+		} else 
 			//write currentquestion, trueCount, falseCount to answers.csv;
 			try {
 				File file = new File("answers.csv");
@@ -40,7 +40,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 				}
 				FileWriter fw = new FileWriter(file.getAbsoluteFile());
 				BufferedWriter bw = new BufferedWriter(fw);
-				bw.write(currentquestion + ",ja: " + trueCount + ",nee: " + falseCount + "\n");
+				bw.write(currentQuestion + ",ja: " + trueCount + ",nee: " + falseCount + "\n");
 				bw.close();
 			} catch(IOException e) {
 				
@@ -50,7 +50,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 			trueCount = 0;
 			falseCount = 0;
 			currentQuestion = questionHandler.getNextQuestion();
-			window.setQuestionLabel(currentquestion);
+			window.setQuestionLabel(currentQuestion);
 			window.setTrueLabel("Ja gestemd: " + trueCount);
 			window.setFalseLabel("Nee gestemd: " + falseCount);
 			System.out.println(currentQuestion);

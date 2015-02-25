@@ -22,15 +22,15 @@ public class Window extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public setQuestionLabel(String s) {
+    public void setQuestionLabel(String s) {
     	questionLabel.setText(s);
     }
 
-    public setTrueLabel(String s) {
+    public void setTrueLabel(String s) {
     	trueLabel.setText(s);
     }
 
-    public setFalseLabel(String s) {
+    public void setFalseLabel(String s) {
     	falseLabel.setText(s);
     }
 }
