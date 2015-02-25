@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.IllegalMonitorStateException;
+import java.lang.InterruptedException;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
@@ -73,8 +75,23 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		falseSensor.start();
 
 		Timer timer = new Timer(true);
+		try {
+			timer.wait();
+		} catch(InterruptedException e) {
+
+		} catch(IllegalMonitorStateException e) {
+
+		}
+		
 		timer.scheduleAtFixedRate(this, 0, 10000);
 		window = new Window();
+		try {
+			timer.notify();
+		} catch(IllegalMonitorStateException e) {
+
+		}
+		
+
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
