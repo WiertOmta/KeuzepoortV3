@@ -39,7 +39,7 @@ public class Window extends JFrame {
         subPanel.add(questionLabel, BorderLayout.CENTER);
         subPanel.add(line, BorderLayout.SOUTH);
         panel.add(subPanel);*/
-        
+
         add(panel, BorderLayout.SOUTH);
         //add(banner, BorderLayout.WEST);
         //add(questionLabel, BorderLayout.CENTER);
@@ -65,7 +65,9 @@ public class Window extends JFrame {
 
  		falseLabel = new JLabel("");
  		//add(falseLabel);
-        getContentPane().setBackground(colorList.get(randomGenerator.nextInt(colorList.size()))); 
+        Color color = colorList.get(randomGenerator.nextInt(colorList.size()));
+        getContentPane().setBackground(color); 
+        panel.setBackground(color);
         setExtendedState(Frame.MAXIMIZED_BOTH);
         setUndecorated(true);
         setVisible(true);
