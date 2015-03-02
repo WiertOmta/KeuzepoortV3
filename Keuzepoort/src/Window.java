@@ -23,7 +23,7 @@ public class Window extends JFrame {
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
 
         line = new JLabel(new ImageIcon("line.png"));
-
+        line.setVerticalAlignment(JLabel.BOTTOM);
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
 
