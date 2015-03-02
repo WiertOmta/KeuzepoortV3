@@ -21,24 +21,23 @@ public class Window extends JFrame {
         questionLabel.setVerticalAlignment(JLabel.BOTTOM);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
-        questionLabel.setMinimumSize(new Dimension(1920,980));
+        //questionLabel.setMinimumSize(new Dimension(1920,980));
 
-        line = new JLabel(new ImageIcon("line.png"));
+        /*line = new JLabel(new ImageIcon("line.png"));
         line.setVerticalAlignment(JLabel.BOTTOM);
-        line.setMaximumSize(new Dimension(1000, 100));
+        line.setMaximumSize(new Dimension(1000, 100));*/
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
 
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         panel.add(banner);
-        //panel.add(questionLabel);
+        panel.add(questionLabel);
 
-
-        subPanel = new JPanel();
+        /*subPanel = new JPanel();
         subPanel.setLayout(new BorderLayout());
         subPanel.add(questionLabel, BorderLayout.CENTER);
-        subPanel.add(line, BorderLayout.SOUTH);
+        subPanel.add(line, BorderLayout.SOUTH);*/
 
         panel.add(subPanel);
         add(panel, BorderLayout.SOUTH);
@@ -86,6 +85,8 @@ public class Window extends JFrame {
     }
 
     public void setRandomBackgroundColor() {
-        getContentPane().setBackground(colorList.get(randomGenerator.nextInt(colorList.size())));
+        Color color = colorList.get(randomGenerator.nextInt(colorList.size()));
+        getContentPane().setBackground(color);
+        panel.setBackground(color);
     }
 }
