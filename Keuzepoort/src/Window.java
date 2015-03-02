@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import java.util.*;
 
 public class Window extends JFrame {
     private JLabel questionLabel, trueLabel, falseLabel;
