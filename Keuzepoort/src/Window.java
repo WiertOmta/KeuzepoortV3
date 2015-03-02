@@ -21,6 +21,7 @@ public class Window extends JFrame {
         questionLabel.setVerticalAlignment(JLabel.BOTTOM);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
+        questionLabel.setMinimumSize(new Dimension(1920,980));
 
         line = new JLabel(new ImageIcon("line.png"));
         line.setVerticalAlignment(JLabel.BOTTOM);
