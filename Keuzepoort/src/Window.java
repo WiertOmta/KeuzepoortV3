@@ -25,18 +25,18 @@ public class Window extends JFrame {
  		
         randomGenerator = new Random();
 
-        colorList.add(Color(161,38,131));
-        colorList.add(Color(27,172,75));
-        colorList.add(Color(4,116,189));
-        colorList.add(Color(23,173,172));
-        colorList.add(Color(108,140,199));
-        colorList.add(Color(166,206,56));
-        colorList.add(Color(234,55,128));
-        colorList.add(Color(222,146,192));
-        colorList.add(Color(120,205,210));
-        colorList.add(Color(237,62,61));
-        colorList.add(Color(241,112,36));
-        colorList.add(Color(132,199,143));
+        colorList.add(new Color(161,38,131));
+        colorList.add(new Color(27,172,75));
+        colorList.add(new Color(4,116,189));
+        colorList.add(new Color(23,173,172));
+        colorList.add(new Color(108,140,199));
+        colorList.add(new Color(166,206,56));
+        colorList.add(new Color(234,55,128));
+        colorList.add(new Color(222,146,192));
+        colorList.add(new Color(120,205,210));
+        colorList.add(new Color(237,62,61));
+        colorList.add(new Color(241,112,36));
+        colorList.add(new Color(132,199,143));
 
  		trueLabel = new JLabel("");
  		//add(trueLabel);
