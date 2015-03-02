@@ -11,6 +11,7 @@ public class Window extends JFrame {
     private Color color;
     private ArrayList<Color> colorList;
     private Random randomGenerator;
+    private FlowLayout fl;
 
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
@@ -25,9 +26,13 @@ public class Window extends JFrame {
 
         line = new JLabel(new ImageIcon("line.png"));
         line.setHorizontalAlignment(JLabel.RIGHT);
+        line.setVerticalAlignment(JLabel.BOTTOM);
+        
+        fl = new FlowLayout();
+        fl.add(banner);
+        fl.add(line);
 
-        add(line, BorderLayout.SOUTH);
-        add(banner, BorderLayout.SOUTH);
+        add(fl, BorderLayout.SOUTH);
         add(questionLabel, BorderLayout.CENTER);
  		
         randomGenerator = new Random();
