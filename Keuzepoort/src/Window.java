@@ -25,6 +25,7 @@ public class Window extends JFrame {
  		
         randomGenerator = new Random();
 
+        colorList = new ArrayList<Color>();
         colorList.add(new Color(161,38,131));
         colorList.add(new Color(27,172,75));
         colorList.add(new Color(4,116,189));
