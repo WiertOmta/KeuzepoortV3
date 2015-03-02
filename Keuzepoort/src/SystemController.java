@@ -30,9 +30,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	public void run() {
 		if(currentQuestion.equals("")) {
 			currentQuestion = questionHandler.getNextQuestion();
-			if(!(currentQuestion.equals(""))) {
-				window.setQuestionLabel("<html><body style='width: 1200px'>" + currentQuestion + "</body></html>");
-			}
+			window.setQuestionLabel("<html><body style='width: 1200px'>" + currentQuestion + "</body></html>");
 		} else 
 			//write currentquestion, trueCount, falseCount to answers.csv;
 			try {
@@ -48,6 +46,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 			falseCount = 0;
 			currentQuestion = questionHandler.getNextQuestion();
 			window.setQuestionLabel("<html><body style='width: 1200px'>" + currentQuestion + "</body></html>");
+			window.setRandomBackgroundColor();
 		}
 
 	public SystemController() {
