@@ -11,19 +11,28 @@ public class Window extends JFrame {
     private Color color;
     private ArrayList<Color> colorList;
     private Random randomGenerator;
+    private JPanel panel;
 
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
         setLayout(new BorderLayout());
         questionLabel = new JLabel("");
         questionLabel.setHorizontalAlignment(JLabel.CENTER);
-        questionLabel.setVerticalAlignment(JLabel.CENTER);
+        questionLabel.setVerticalAlignment(JLabel.BOTTOM);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
+
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
-        add(banner, BorderLayout.WEST);
-        add(questionLabel, BorderLayout.CENTER);
+
+        panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        panel.add(banner);
+        panel.add(questionLabel);
+        add(panel, BorderLayout.SOUTH);
+
+        //add(banner, BorderLayout.WEST);
+        //add(questionLabel, BorderLayout.CENTER);
  		
         randomGenerator = new Random();
 
