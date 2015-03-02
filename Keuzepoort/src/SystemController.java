@@ -9,6 +9,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class SystemController extends TimerTask implements GpioPinListenerDigital {
 
@@ -19,9 +22,11 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 	private int falseCount;
 	private String currentQuestion;
 	private Window window;
-	File file;
-	BufferedWriter bw;
-	FileWriter fw;
+	private DateFormat dateFormat;
+	private File file;
+	private BufferedWriter bw;
+	private FileWriter fw;
+
 
 	public static void main(String[] args) {
 		SystemController systemController = new SystemController();
@@ -34,7 +39,8 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		} else 
 			//write currentquestion, trueCount, falseCount to answers.csv;
 			try {
-				bw.write(currentQuestion + "," + trueCount + "," + falseCount);
+				Date date = new Date();
+				bw.write(dateFormat.format(date) + "," + currentQuestion + "," + trueCount + "," + falseCount);
 				bw.newLine();
 				bw.flush();
 			} catch(IOException e) {
@@ -60,6 +66,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		} catch(IOException e) {
 			
 		}
+		dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		window = new Window();
 		trueCount = 0;
 		falseCount = 0;
