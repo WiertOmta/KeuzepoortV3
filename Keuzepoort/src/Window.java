@@ -20,7 +20,7 @@ public class Window extends JFrame {
         questionLabel.setVerticalAlignment(JLabel.TOP);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
-        add(new JLabel(new ImageIcon("banner.png")), BorderLayout.NORTH);
+        add(new JLabel(new ImageIcon("banner.png")), BorderLayout.WEST);
         add(questionLabel, BorderLayout.CENTER);
  		
         randomGenerator = new Random();
