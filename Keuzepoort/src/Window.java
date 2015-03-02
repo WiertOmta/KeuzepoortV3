@@ -37,9 +37,9 @@ public class Window extends JFrame {
         /*subPanel = new JPanel();
         subPanel.setLayout(new BorderLayout());
         subPanel.add(questionLabel, BorderLayout.CENTER);
-        subPanel.add(line, BorderLayout.SOUTH);*/
-
-        panel.add(subPanel);
+        subPanel.add(line, BorderLayout.SOUTH);
+        panel.add(subPanel);*/
+        
         add(panel, BorderLayout.SOUTH);
         //add(banner, BorderLayout.WEST);
         //add(questionLabel, BorderLayout.CENTER);
