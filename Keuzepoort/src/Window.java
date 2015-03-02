@@ -7,11 +7,11 @@ import javax.swing.ImageIcon;
 import java.util.*;
 
 public class Window extends JFrame {
-    private JLabel questionLabel, trueLabel, falseLabel, banner;
+    private JLabel questionLabel, trueLabel, falseLabel, banner, line;
     private Color color;
     private ArrayList<Color> colorList;
     private Random randomGenerator;
-    private JPanel panel;
+    private JPanel panel, subPanel;
 
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
@@ -22,15 +22,24 @@ public class Window extends JFrame {
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
 
+        line = new JLabel(new ImageIcon("line.png"));
+
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
 
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         panel.add(banner);
-        panel.add(questionLabel);
-        add(panel, BorderLayout.SOUTH);
+        //panel.add(questionLabel);
 
+
+        subPanel = new JPanel();
+        subPanel.setLayout(new BorderLayout());
+        subPanel.add(questionLabel, BorderLayout.CENTER);
+        subPanel.add(line, BorderLayout.SOUTH);
+
+        panel.add(subPanel);
+        add(panel, BorderLayout.SOUTH);
         //add(banner, BorderLayout.WEST);
         //add(questionLabel, BorderLayout.CENTER);
  		
