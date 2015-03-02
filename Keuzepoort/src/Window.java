@@ -16,16 +16,13 @@ public class Window extends JFrame {
     public Window() {
         setTitle("Keuzepoort software - by IGNE 2015");
         setLayout(new BorderLayout());
+
         questionLabel = new JLabel("");
         questionLabel.setHorizontalAlignment(JLabel.CENTER);
         questionLabel.setVerticalAlignment(JLabel.BOTTOM);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
-        //questionLabel.setMinimumSize(new Dimension(1920,980));
 
-        /*line = new JLabel(new ImageIcon("line.png"));
-        line.setVerticalAlignment(JLabel.BOTTOM);
-        line.setMaximumSize(new Dimension(1000, 100));*/
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
 
@@ -34,15 +31,7 @@ public class Window extends JFrame {
         panel.add(banner);
         panel.add(questionLabel);
 
-        /*subPanel = new JPanel();
-        subPanel.setLayout(new BorderLayout());
-        subPanel.add(questionLabel, BorderLayout.CENTER);
-        subPanel.add(line, BorderLayout.SOUTH);
-        panel.add(subPanel);*/
-
         add(panel, BorderLayout.SOUTH);
-        //add(banner, BorderLayout.WEST);
-        //add(questionLabel, BorderLayout.CENTER);
  		
         randomGenerator = new Random();
 
@@ -60,11 +49,6 @@ public class Window extends JFrame {
         colorList.add(new Color(241,112,36));
         colorList.add(new Color(132,199,143));
 
- 		trueLabel = new JLabel("");
- 		//add(trueLabel);
-
- 		falseLabel = new JLabel("");
- 		//add(falseLabel);
         Color color = colorList.get(randomGenerator.nextInt(colorList.size()));
         getContentPane().setBackground(color); 
         panel.setBackground(color);
