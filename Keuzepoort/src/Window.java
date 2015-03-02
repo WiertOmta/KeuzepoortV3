@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import java.util.*;
 
 public class Window extends JFrame {
-    private JLabel questionLabel, trueLabel, falseLabel;
+    private JLabel questionLabel, trueLabel, falseLabel, banner;
     private Color color;
     private ArrayList<Color> colorList;
     private Random randomGenerator;
@@ -20,7 +20,9 @@ public class Window extends JFrame {
         questionLabel.setVerticalAlignment(JLabel.CENTER);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
-        add(new JLabel(new ImageIcon("banner.png")), BorderLayout.WEST);
+        banner = new JLabel(new ImageIcon("banner.png"));
+        banner.setHorizontalAlignment(JLabel.LEFT);
+        add(banner, BorderLayout.SOUTH);
         add(questionLabel, BorderLayout.CENTER);
  		
         randomGenerator = new Random();
