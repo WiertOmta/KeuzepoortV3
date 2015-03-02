@@ -24,6 +24,7 @@ public class Window extends JFrame {
 
         line = new JLabel(new ImageIcon("line.png"));
         line.setVerticalAlignment(JLabel.BOTTOM);
+        line.setMaximumSize(new Dimension(1000, 100));
         banner = new JLabel(new ImageIcon("banner.png"));
         banner.setHorizontalAlignment(JLabel.LEFT);
 
