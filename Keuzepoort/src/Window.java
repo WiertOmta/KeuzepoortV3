@@ -17,7 +17,7 @@ public class Window extends JFrame {
         setLayout(new BorderLayout());
         questionLabel = new JLabel("");
         questionLabel.setHorizontalAlignment(JLabel.CENTER);
-        questionLabel.setVerticalAlignment(JLabel.TOP);
+        questionLabel.setVerticalAlignment(JLabel.CENTER);
         questionLabel.setForeground(Color.WHITE);
         questionLabel.setFont(new Font("Roboto Condensed", Font.BOLD, 70)); 
         add(new JLabel(new ImageIcon("banner.png")), BorderLayout.WEST);
