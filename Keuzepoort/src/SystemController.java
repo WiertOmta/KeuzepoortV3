@@ -74,7 +74,7 @@ public class SystemController extends TimerTask implements GpioPinListenerDigita
 		falseSensor.start();
 
 		Timer timer = new Timer(true);
-		timer.scheduleAtFixedRate(this, 0, 10000);
+		timer.scheduleAtFixedRate(this, 0, 60 * 30 * 1000);
 	}
 	
 	public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
